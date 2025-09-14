@@ -1,12 +1,19 @@
-
 import java.util.Scanner;
 
+/**
+ * Головний клас програми.
+ * Генерує перші N чисел Люка і перевіряє, які з них є кубами.
+ */
 public class Program {
 
+    /**
+     * Точка входу в програму.
+     * @param args аргументи командного рядка (можна передати N як перший аргумент)
+     */
     public static void main(String[] args) {
         int N = 0;
 
-
+        // Якщо число передане аргументом
         if (args.length > 0) {
             try {
                 N = Integer.parseInt(args[0]);
@@ -15,7 +22,7 @@ public class Program {
                 return;
             }
         } else {
-
+            // Якщо число вводиться вручну
             System.out.println("Введіть N (кількість перших чисел Люка): ");
             try {
                 Scanner sc = new Scanner(System.in);
@@ -52,11 +59,11 @@ public class Program {
             long value = ln.getValue();
             String iscube = "";
 
-            if(ln.isCube()){
+            if (ln.isCube()) {
                 iscube = " (є кубом:" + Math.round(Math.cbrt(value)) + "^3)";
             }
 
-            System.out.println("L" + index+ " = " + value + iscube);
+            System.out.println("L" + index + " = " + value + iscube);
         }
     }
 }
